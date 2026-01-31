@@ -1,14 +1,12 @@
-/* Main styles for Artistry Gallery */
-/* made by [Your Name] */
+/* Ayna's Pink Art Gallery */
+/* made by ayna sulaiman */
 
-/* basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Type Selector - applies to all elements of that type */
 html {
     scroll-behavior: smooth;
 }
@@ -16,9 +14,8 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #faf8f5;
-    /* background: #f5f5f5; - tried this but looked too grey */
+    color: #4a3f4a;
+    background: #fff9fb;
 }
 
 h1, h2, h3 {
@@ -52,9 +49,8 @@ ul {
     align-items: center;
     padding: 15px 50px;
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 15px rgba(219, 112, 147, 0.15);
     z-index: 1000;
-    transition: all 0.3s ease;
 }
 
 .logo {
@@ -64,19 +60,15 @@ ul {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: #d4729c;
 }
 
 .logo i {
-    color: #c9a86c;
-    font-size: 1.8rem;
+    color: #e8a0bf;
+    font-size: 1.6rem;
 }
 
-/* nav stuff */
-.navbar {
-    display: flex;
-}
-
+/* nav */
 .nav-links {
     display: flex;
     gap: 30px;
@@ -84,22 +76,17 @@ ul {
 
 .nav-link {
     font-size: 0.95rem;
-    font-weight: 400;
-    color: #555;
+    color: #7a6b7a;
     padding: 8px 5px;
     position: relative;
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #c9a86c;
-}
-
+.nav-link:hover,
 .nav-link.active {
-    color: #c9a86c;
+    color: #d4729c;
 }
 
-/* cool underline thing */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -107,7 +94,7 @@ ul {
     left: 0;
     width: 0;
     height: 2px;
-    background: #c9a86c;
+    background: linear-gradient(90deg, #e8a0bf, #f5c6d6);
     transition: width 0.3s ease;
 }
 
@@ -115,16 +102,15 @@ ul {
     width: 100%;
 }
 
-/* hero section - the big banner at top */
+/* hero */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Background Image - can be replaced */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1920') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(232, 160, 191, 0.8), rgba(245, 198, 214, 0.7)),
+                url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1920') center/cover;
     color: #fff;
 }
 
@@ -132,33 +118,32 @@ ul {
     font-size: 3.5rem;
     margin-bottom: 20px;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     animation: fadeInUp 1s ease;
-    /* font-size: 4rem; too big on mobile */
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    opacity: 0.9;
     animation: fadeInUp 1s ease 0.2s both;
 }
 
 .btn {
     display: inline-block;
     padding: 12px 35px;
-    background: #c9a86c;
+    background: linear-gradient(135deg, #d4729c, #e8a0bf);
     color: #fff;
     font-size: 1rem;
     border: none;
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     animation: fadeInUp 1s ease 0.4s both;
 }
 
 .btn:hover {
-    background: #b8975b;
     transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(201, 168, 108, 0.4);
+    box-shadow: 0 8px 25px rgba(212, 114, 156, 0.4);
 }
 
 /* gallery */
@@ -170,12 +155,12 @@ ul {
 
 .gallery-section h2 {
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #d4729c;
     margin-bottom: 10px;
 }
 
 .section-desc {
-    color: #777;
+    color: #a89aa8;
     margin-bottom: 50px;
 }
 
@@ -189,15 +174,15 @@ ul {
 
 .artwork-card {
     background: #fff;
-    border-radius: 8px;  /* maybe try 10px? */
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(219, 112, 147, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .artwork-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(219, 112, 147, 0.2);
 }
 
 .artwork-image {
@@ -218,11 +203,8 @@ ul {
 
 .artwork-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(44, 62, 80, 0.7);
+    inset: 0;
+    background: rgba(212, 114, 156, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -238,8 +220,8 @@ ul {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #c9a86c;
-    color: #fff;
+    background: #fff;
+    color: #d4729c;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,12 +241,12 @@ ul {
 
 .artwork-info h3 {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: #5a4a5a;
     margin-bottom: 5px;
 }
 
 .artwork-info p {
-    color: #888;
+    color: #a89aa8;
     font-size: 0.9rem;
 }
 
@@ -272,90 +254,15 @@ ul {
     display: inline-block;
     margin-top: 10px;
     font-weight: 600;
-    color: #c9a86c;
+    color: #d4729c;
 }
 
-/* artists */
-.artists-section {
-    padding: 100px 50px;
-    text-align: center;
-    background: #f5f3f0;
-}
-
-.artists-section h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.artists-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.artist-card {
-    padding: 30px;
-    background: #fff;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.artist-card:hover {
-    transform: translateY(-5px);
-}
-
-.artist-card figure {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid #c9a86c;
-}
-
-.artist-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.artist-card h3 {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    margin-bottom: 5px;
-}
-
-.artist-card p {
-    color: #888;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.social-links a {
-    color: #888;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #c9a86c;
-}
-
-/* about us */
+/* about */
 .about-section {
     display: flex;
     align-items: center;
     padding: 100px 50px;
-    background: #fff;
+    background: linear-gradient(135deg, #fff9fb, #fdf2f6);
     gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
@@ -367,12 +274,12 @@ ul {
 
 .about-content h2 {
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #d4729c;
     margin-bottom: 20px;
 }
 
 .about-content p {
-    color: #666;
+    color: #6a5a6a;
     margin-bottom: 15px;
     line-height: 1.8;
 }
@@ -385,14 +292,15 @@ ul {
 .stat {
     text-align: center;
     padding: 30px;
-    background: #f5f3f0;
-    border-radius: 10px;
-    min-width: 120px;
+    background: #fff;
+    border-radius: 15px;
+    min-width: 130px;
+    box-shadow: 0 5px 20px rgba(219, 112, 147, 0.1);
 }
 
 .stat i {
     font-size: 2rem;
-    color: #c9a86c;
+    color: #e8a0bf;
     margin-bottom: 10px;
 }
 
@@ -400,19 +308,19 @@ ul {
     display: block;
     font-size: 2rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: #d4729c;
     font-family: 'Playfair Display', serif;
 }
 
 .stat span:last-child {
-    color: #888;
+    color: #a89aa8;
     font-size: 0.9rem;
 }
 
-/* contact form area */
+/* contact */
 .contact-section {
     padding: 100px 50px;
-    background: #2c3e50;
+    background: linear-gradient(135deg, #d4729c, #e8a0bf);
     color: #fff;
     text-align: center;
 }
@@ -431,10 +339,6 @@ ul {
     text-align: left;
 }
 
-.contact-info {
-    flex: 1;
-}
-
 .info-item {
     display: flex;
     align-items: center;
@@ -444,7 +348,7 @@ ul {
 
 .info-item i {
     font-size: 1.3rem;
-    color: #c9a86c;
+    color: #fff;
     width: 25px;
 }
 
@@ -459,10 +363,10 @@ ul {
 .contact-form textarea {
     padding: 12px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     color: #fff;
     transition: background 0.3s ease;
 }
@@ -470,28 +374,29 @@ ul {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-form .btn {
     align-self: flex-start;
+    background: #fff;
+    color: #d4729c;
+}
+
+.contact-form .btn:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* footer */
 footer {
-    background: #1a252f;
+    background: #5a3a4a;
     padding: 40px 50px;
     text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .footer-brand {
@@ -506,11 +411,11 @@ footer {
 }
 
 .footer-brand i {
-    color: #c9a86c;
+    color: #e8a0bf;
 }
 
 footer p {
-    color: #888;
+    color: #c9a0b9;
     font-size: 0.9rem;
     margin-bottom: 20px;
 }
@@ -522,13 +427,13 @@ footer p {
 }
 
 .footer-social a {
-    color: #888;
+    color: #c9a0b9;
     font-size: 1.2rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social a:hover {
-    color: #c9a86c;
+    color: #e8a0bf;
     transform: translateY(-3px);
 }
 
@@ -544,25 +449,15 @@ footer p {
     }
 }
 
-/* responsive stuff */
-
-/* tablets */
+/* responsive */
 @media screen and (max-width: 992px) {
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .artists-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
     .about-section {
         flex-direction: column;
         text-align: center;
-    }
-    
-    .about-stats {
-        justify-content: center;
     }
     
     .contact-wrapper {
@@ -577,7 +472,6 @@ footer p {
     }
 }
 
-/* phones */
 @media screen and (max-width: 768px) {
     #main-header {
         padding: 15px 20px;
@@ -595,13 +489,7 @@ footer p {
         font-size: 2.2rem;
     }
     
-    .hero-content p {
-        font-size: 1rem;
-        padding: 0 20px;
-    }
-    
     .gallery-section,
-    .artists-section,
     .about-section,
     .contact-section {
         padding: 60px 20px;
@@ -609,32 +497,14 @@ footer p {
     
     .gallery-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .artists-grid {
-        grid-template-columns: 1fr;
     }
     
     .about-stats {
         flex-direction: column;
         align-items: center;
     }
-    
-    .stat {
-        width: 100%;
-        max-width: 200px;
-    }
-    
-    .gallery-section h2,
-    .artists-section h2,
-    .about-content h2,
-    .contact-section h2 {
-        font-size: 1.8rem;
-    }
 }
 
-/* tiny screens lol */
 @media screen and (max-width: 480px) {
     .hero-content h1 {
         font-size: 1.8rem;
@@ -642,15 +512,5 @@ footer p {
     
     .btn {
         padding: 10px 25px;
-        font-size: 0.9rem;
-    }
-    
-    .nav-link {
-        font-size: 0.85rem;
-    }
-    
-    .contact-form input,
-    .contact-form textarea {
-        padding: 10px 12px;
     }
 }
