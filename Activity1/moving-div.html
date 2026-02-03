@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Moving Div</h1>
+    
+    <button type="button" onclick="move()">Start</button>
+    
+    <div id="outer" style="width:300px; height:100px; border:2px solid black; position:relative;">
+        <div id="inner" style="width:50px; height:50px; background:rgb(238, 104, 178); position:absolute; left:0px;"></div>
+    </div>
+    
+    <script>
+        var pos = 0;
+        
+        function move() {
+            setInterval(function() {
+                if (pos < 250) {
+                    pos++;
+                    document.getElementById('inner').style.left = pos + 'px';
+                }
+            }, 10);
+        }
+    </script>
+</body>
+</html>
